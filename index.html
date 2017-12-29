@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>odopeyone</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicons/favicon-16.png" sizes="16x16">
+    <link rel="manifest" href="img/favicons/manifest.json">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#000000">
+
+
+    
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,600);
+		@font-face {
+			font-family: hacka;
+			src: url(hacka___.ttf);
+		}
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			font-family: hacka;
+			text-shadow: 0px 0px 2px rgba(255,255,255,0.6);
+		}
+		html, body {
+			background-color:black;
+			overflow-x: hidden;
+			color: lime;
+		}
+		canvas {
+			display: block;
+			z-index: -1;
+			position: fixed;
+		}
+		h1 {
+			font-size: 2em;
+		}
+		h2  {
+			font-size: 1.6em;
+		}
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 1.3em;
+			}
+			h2  {
+				font-size: 0.8em;
+			}
+			small {
+				font-size: 0.6em;
+			}
+		}
+		#container {
+			z-index: 0;
+			position: absolute;
+			margin: auto;
+			right: 0; left: 0; top: 0; bottom: 0;
+			text-align: center;
+			height: 190px;
+			padding: 15px;
+		}
+		#signature {
+			z-index: 0;
+			position: absolute;
+			right: 20px;
+			bottom: 10px;
+			color: white;
+			font-family: "Josefin Sans";
+			font-weight: 600;
+		}
+		#signature h4 {
+		    display: inline-block;
+		}
+		#logo {
+		    display: inline-block;
+		    height: 50px;
+		    margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="c">
+	</canvas>
+	<div id="container">
+		<div class="content">
+			<div id="box">
+				<h2>“Though you can love what you do not master, </h2>
+				<h1>you cannot master what you do not love.”</h1>
+				<small>Mokokoma Mokhonoana</small>
+			</div>
+		</div>	
+	</div>	
+	<div id="signature"><img id="logo" src="img/logo.png" alt="logo" /> <h4>ODOPEYONE</h4></div>
+
+	<script type="text/javascript">
+/*	var c = document.getElementById("c");
+	var ctx = c.getContext("2d");
+
+	//making the canvas full screen
+	c.height = window.innerHeight;
+	c.width = window.innerWidth;
+
+	//chinese characters - taken from the unicode charset
+	var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+	//converting the string into an array of single characters
+	chinese = chinese.split("");
+
+	var font_size = 10;
+	var columns = c.width/font_size; //number of columns for the rain
+	//an array of drops - one per column
+	var drops = [];
+	//x below is the x coordinate
+	//1 = y co-ordinate of the drop(same for every drop initially)
+	for(var x = 0; x < columns; x++)
+		drops[x] = 1; 
+
+	//drawing the characters
+	function draw()
+	{
+		//Black BG for the canvas
+		//translucent BG to show trail
+		ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+		ctx.fillRect(0, 0, c.width, c.height);
+		
+		ctx.fillStyle = "#0F0"; //green text
+		ctx.font = font_size + "px arial";
+		//looping over drops
+		for(var i = 0; i < drops.length; i++)
+		{
+			//a random chinese character to print
+			var text = chinese[Math.floor(Math.random()*chinese.length)];
+			//x = i*font_size, y = value of drops[i]*font_size
+			ctx.fillText(text, i*font_size, drops[i]*font_size);
+			
+			//sending the drop back to the top randomly after it has crossed the screen
+			//adding a randomness to the reset to make the drops scattered on the Y axis
+			if(drops[i]*font_size > c.height && Math.random() > 0.975)
+				drops[i] = 0;
+			
+			//incrementing Y coordinate
+			drops[i]++;
+		}
+	}
+
+	function drawAlot() {
+		draw();
+		setTimeout(drawAlot, 25);
+	}*/
+	</script>
+	<script type="text/javascript" src="js/p5.min.js"></script>
+	<script type="text/javascript" src="js/triangle.js"></script>
+</body>
+</html>
